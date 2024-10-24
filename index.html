@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <style>
+      .section-loader {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          padding: 20px 0;
+      }
+      .circle-wrap {
+          padding: 15px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+      }
+      .circle-wrap .header-bg {
+          width: 54px;
+          height: 10px;
+          border-radius: 10px;
+          background: linear-gradient(to right, rgba(217, 221, 236, 1) 8%, rgba(217, 221, 237, .4) 18%, rgba(217, 221, 237, 1) 33%);
+          background-size: 400px 100px;
+          animation: wave-squares 2s infinite ease-out;
+      }
+      .circle-items {
+          width: 90px;
+          height: 90px;
+          background: #F5F7FD;
+          border-radius: 50%;
+      }
+      .circle-items .circle .mask,
+      .circle-items .circle .fill {
+          width: 90px;
+          height: 90px;
+          position: absolute;
+          border-radius: 50%;
+      }
+      .mask .fill {
+          clip: rect(0px, 90px, 50px, 45px);
+          background-color: #D9DDED;
+          animation: rotate 2s linear infinite;
+      }
+      .mask .fill.fill-1,
+      .mask .fill.fill-3 {
+          clip: rect(0px, 90px, 90px, 45px);
+      }
+      @keyframes rotate{
+          100%{
+              transform: rotate(360deg);
+          }
+      }
+      .circle-items .inside-circle {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          background: #FFFFFF;
+          text-align: center;
+          margin-top: 10px;
+          margin-left: 10px;
+          position: absolute;
+      }
+      .circle-items .inside-circle span {
+          width: 24px;
+          height: 10px;
+          background: #EDEFF5;
+          border-radius: 8px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 100;
+          background: linear-gradient(to right, rgba(237, 239, 245, 1) 8%, rgba(217, 221, 237, .8) 18%, rgba(237, 239, 245, 1) 33%);
+          background-size: 400px 100px;
+          animation: wave-squares 2s infinite ease-out;
+      }
+      @keyframes wave-squares {
+          0% {
+              background-position: -268px 0;
+          }
+          100% {
+              background-position: 268px 0;
+          }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="section-loader">
+      <div class="circle-wrap">
+        <div class="header-bg"></div>
+        <div class="circle-items">
+          <div class="circle">
+            <div class="mask">
+                <div class="fill"></div>
+            </div>
+            <div class="inside-circle"> <span></span> </div>
+          </div>
+        </div>
+      </div>
+      <div class="circle-wrap">
+        <div class="header-bg"></div>
+        <div class="circle-items">
+          <div class="circle">
+            <div class="mask">
+                <div class="fill fill-1"></div>
+            </div>
+            <div class="inside-circle"> <span></span> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
